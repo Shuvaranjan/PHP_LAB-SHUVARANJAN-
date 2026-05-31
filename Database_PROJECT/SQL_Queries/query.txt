@@ -1,0 +1,37 @@
+
+#User Info
+CREATE TABLE user_info (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    father_name VARCHAR(100),
+    mother_name VARCHAR(100),
+    birth_day INT,
+    birth_month VARCHAR(20),
+    birth_year VARCHAR(20),
+    gender VARCHAR(20),
+    contact VARCHAR(20),
+    nationality VARCHAR(50),
+    email VARCHAR(100),
+    religion VARCHAR(50),
+    marital_status VARCHAR(50),
+    photo VARCHAR(255),
+    address TEXT,
+    experience TEXT,
+    computer_knowledge TEXT,
+    declaration TEXT,
+    place VARCHAR(100),
+    biodata_date VARCHAR(20)
+);
+
+
+#User Education
+CREATE TABLE user_education (
+    education_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    exam_name VARCHAR(100),
+    passing_year VARCHAR(10),
+    board_university VARCHAR(100),
+    percentage VARCHAR(10),
+    grade VARCHAR(10),
+    FOREIGN KEY (user_id) REFERENCES user_info(id)
+);
